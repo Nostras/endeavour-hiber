@@ -6,6 +6,7 @@ In general this should work if you have the following things:
 1. Arch (based) -> Requires pacman
 2. yay
 3. dracut 
+4. Python 3
 
 Then it's just run and go.
 
