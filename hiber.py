@@ -34,7 +34,7 @@ run('sudo chmod 600 /swapfile')
 run('sudo mkswap /swapfile')
 run('sudo swapon /swapfile')
 run('sudo sh -c "echo -e \"add_dracutmodules+=\'resume\'\" > /etc/dracut.conf"')
-run('sudo dracut -f /boot/initramfs-linux-zen.img')
+run('sudo dracut-rebuild')
 resumeOffset = run('sudo swap-offset /swapfile')[0].split(' ')[3]
 uuid = run('findmnt -no UUID -T /swapfile')[0]
 run('sudo sed -i "s/loglevel=3\'/loglevel=3 resume=UUID=' + uuid + ' resume_offset=' + resumeOffset + '\'/g" /etc/default/grub')
